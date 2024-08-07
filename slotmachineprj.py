@@ -53,7 +53,7 @@ def game_continuity(balance,row,col,lines,collection):
     if balance==0:
         opinion=input("You have no balance, Do want to continue. If you want to continue enter ""YES"" else enter ""NO""\n")
         if opinion.upper()=="YES":
-            main()
+            main(0)
         elif opinion.upper()=="NO":
             print("GAME OVER!")
             quit()
@@ -62,10 +62,7 @@ def game_continuity(balance,row,col,lines,collection):
     else:
         chance=input("Do you want to bet again, If yes enter ""YES"" or else enter ""NO""\n")
         if chance.upper()=="YES":
-            spin_machine(row,col)
-            get_number_of_lines()
-            print(show(collection))
-            winning_list(collection,lines)
+            main(1)
         else:
             print("GAME OVER!")
             quit()
@@ -118,8 +115,9 @@ def get_bet():
     return bet
 
 #execution area
-def main():
-    balance = deposit()
+def main(int i):
+    if i=0:
+        balance = deposit()
     lines=get_number_of_lines()
     while True:
         bet_amount = get_bet()
@@ -142,4 +140,4 @@ def main():
         balance=balance-bet_amount
         print(f"Oops! you lost the bet and lost ${bet_amount}, now your balance is ${balance}")
     proceed=game_continuity(balance,ROW,COL,lines,collection)
-main()
+main(i)
