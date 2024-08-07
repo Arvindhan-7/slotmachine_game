@@ -115,7 +115,7 @@ def get_bet():
     return bet
 
 #execution area
-def main(int i):
+def main(i):
     if i=0:
         balance = deposit()
     lines=get_number_of_lines()
@@ -140,4 +140,4 @@ def main(int i):
         balance=balance-bet_amount
         print(f"Oops! you lost the bet and lost ${bet_amount}, now your balance is ${balance}")
     proceed=game_continuity(balance,ROW,COL,lines,collection)
-main(i)
+main(1)
