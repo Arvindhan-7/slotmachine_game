@@ -116,7 +116,8 @@ def get_bet():
 
 #execution area
 def main(i):
-    if i=0:
+    #small chnage is required on running the functionality
+    if i==0:
         balance = deposit()
     lines=get_number_of_lines()
     while True:
